@@ -1,22 +1,54 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar id="header" class="ion-justify-content-center ion-align-items-center">
+    <ion-title class="ion-text-center title">
+      {{formula}}
     </ion-title>
+    <p class="ion-text-center muted">{{result}}</p>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
+  
+  <div id="container" [style.background]="bgColor">
+    <!-- Icon -->
+    <ion-row id="light-row">
+      <ion-button class="circle" (click) = "changeColor()">
+        <img [src]="iconTheme">
+      </ion-button>
+      <ion-button class="circle" (click)="calculate('delete')">
+        <img src="assets/icon/delete.png">
+      </ion-button>
+    </ion-row>
+
+    <!-- Buttons -->
+    <ion-row id="buttons">
+      <ion-col *ngFor="let cont of numbers" size="4" (click)="calculate(cont)">
+        <ion-button size="large" class="buttons" [style.color] = "textColor">{{cont}}</ion-button>
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+
+    <!-- Operations -->
+    <ion-footer id="footer-container" class="ion-justify-content-center ion-align-items-end">
+      <ion-toolbar id="footer">
+        <ion-row>
+          <ion-col *ngFor="let i of lengh" size="3">
+            <ion-button class="circle" (click)="calculate(operations[i])">
+              <ion-icon [name]='icons[i]' size='medium'></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ion-footer>
   </div>
 </ion-content>

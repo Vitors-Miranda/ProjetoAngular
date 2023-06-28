@@ -1,27 +1,52 @@
 #container {
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  padding: 20px;
+  transition: all 0.3s;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+#header{
+  --background: linear-gradient(90deg, rgba(81,24,69,1) 0%, rgba(144,12,63,1) 35%, rgba(199,0,57,1) 63%, rgba(255,87,51,1) 100%);
+  height: 20vh;
+  display: flex;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+// Icone de mudar tema
+.circle{
+  --box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  --background:none;
+  --border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 10px;
+  --ion-toolbar-background: white;
+  margin: 10px;
+}
+#light-row{
+  height: 10vh;
+}
+#buttons{
+  height: 55vh;
+}
+#footer-container{
+  height: 10vh;
+  display: flex;
+}
+.title{
+  font-size: 50px;
+}
+#footer{
+  width: 500px;
+  border-radius: 30px;
+  --background: linear-gradient(90deg, rgba(81,24,69,1) 0%, rgba(144,12,63,1) 35%, rgba(199,0,57,1) 63%, rgba(255,87,51,1) 100%);
+}
+.buttons{
+  height: 10vh;
+  width: 10vh;
+  --border-radius: 30px;
+  --box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.35);
+  --background:none;
 }
 
-#container a {
-  text-decoration: none;
+.muted{
+  opacity: 0.7;
 }
